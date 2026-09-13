@@ -122,6 +122,8 @@ const dirOf = r => (r == null ? 'flat' : r > 0 ? 'up' : r < 0 ? 'down' : 'flat')
               <td class="jump-cell">
                 <button class="mini lime" @click="emit('go', 'ta', it)" title="기술적분석">TA</button>
                 <button class="mini blue" @click="emit('go', 'stockr', it)" title="스토커 상담">상담</button>
+                <button v-if="it.market !== 'US'" class="mini indigo" @click="emit('go', 'kofia', it)"
+                        title="금융투자협회 전자공시">공시</button>
               </td>
             </tr>
           </tbody>
@@ -220,6 +222,8 @@ const dirOf = r => (r == null ? 'flat' : r > 0 ? 'up' : r < 0 ? 'down' : 'flat')
 .mini.lime:hover { background: var(--lime); color: var(--indigo-deep); }
 .mini.blue { background: var(--blue-soft); color: var(--blue-deep); }
 .mini.blue:hover { background: var(--blue); color: #fff; }
+.mini.indigo { background: #ECEBF5; color: var(--indigo); }
+.mini.indigo:hover { background: var(--indigo); color: #fff; }
 
 .more { margin-top: 14px; padding: 14px; gap: 7px; }
 

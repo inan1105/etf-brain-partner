@@ -64,6 +64,10 @@
 .btn-blue { background: var(--blue); color: #fff; box-shadow: 0 8px 18px -10px rgba(49, 130, 246, .85); }
 .btn-blue:hover { background: var(--blue-deep); }
 
+/* 금융투자협회 전자공시 */
+.btn-indigo { background: var(--indigo); color: #fff; box-shadow: 0 8px 18px -10px rgba(44, 41, 96, .85); }
+.btn-indigo:hover { background: var(--indigo-deep); }
+
 .btn-ghost { background: var(--surface); color: var(--ink-soft); border: 1px solid var(--line-data); box-shadow: none; }
 .btn-ghost:hover { background: #E9ECEF; }
 

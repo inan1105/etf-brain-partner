@@ -255,6 +255,8 @@ const short = n => splitBrand(n)
                 <span class="d-acts">
                   <button class="mini lime" @click="emit('go', 'ta', it)">TA</button>
                   <button class="mini blue" @click="emit('go', 'stockr', it)">상담</button>
+                  <button v-if="it.market !== 'US'" class="mini indigo" @click="emit('go', 'kofia', it)"
+                          title="금융투자협회 전자공시">공시</button>
                 </span>
               </li>
             </ul>
@@ -289,6 +291,8 @@ const short = n => splitBrand(n)
                 <span class="d-acts">
                   <button class="mini lime" @click="emit('go', 'ta', it)">TA</button>
                   <button class="mini blue" @click="emit('go', 'stockr', it)">상담</button>
+                  <button v-if="it.market !== 'US'" class="mini indigo" @click="emit('go', 'kofia', it)"
+                          title="금융투자협회 전자공시">공시</button>
                 </span>
               </li>
             </ul>
@@ -401,6 +405,7 @@ const short = n => splitBrand(n)
 .mini { padding: 3px 7px; border-radius: 6px; font-size: 9.5px; font-weight: 800; }
 .mini.lime { background: var(--lime-soft); color: #5E7A05; }
 .mini.blue { background: var(--blue-soft); color: var(--blue-deep); }
+.mini.indigo { background: #ECEBF5; color: var(--indigo); }
 
 .lnk { font-size: 10.5px; font-weight: 800; color: var(--muted-2); text-decoration: underline; }
 .lnk:hover { color: var(--up); }

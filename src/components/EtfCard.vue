@@ -84,6 +84,9 @@ const tags = computed(() => {
     <div class="acts">
       <button class="btn btn-sm btn-lime" @click.stop="emit('go', 'ta', item)">기술적분석</button>
       <button class="btn btn-sm btn-blue" @click.stop="emit('go', 'stockr', item)">스토커 상담</button>
+      <!-- 협회 공시는 국내 설정 펀드만 있다 -->
+      <button v-if="item.market !== 'US'" class="btn btn-sm btn-indigo"
+              @click.stop="emit('go', 'kofia', item)">전자공시</button>
     </div>
   </article>
 </template>
@@ -171,7 +174,7 @@ const tags = computed(() => {
 .acts {
   display: flex; gap: 7px; padding: 0 16px 14px;
 }
-.acts .btn { flex: 1; }
+.acts .btn { flex: 1; padding-left: 8px; padding-right: 8px; white-space: nowrap; }
 
 @media (max-width: 420px) {
   .stats { gap: 10px; }

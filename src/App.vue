@@ -7,6 +7,7 @@ import PresetRail from './components/PresetRail.vue'
 import FilterPanel from './components/FilterPanel.vue'
 import ResultView from './components/ResultView.vue'
 import DetailSheet from './components/DetailSheet.vue'
+import KofiaSheet from './components/KofiaSheet.vue'
 import BridgeDialog from './components/BridgeDialog.vue'
 import PortfolioPanel from './components/PortfolioPanel.vue'
 import HoldingsPanel from './components/HoldingsPanel.vue'
@@ -42,6 +43,7 @@ const focusFacet = ref(null)
 const compareCfg = ref(null)
 
 const detail = ref(null)
+const kofia = ref(null) // [전자공시] 로 연 종목
 const bridge = ref(null)
 const toastMsg = ref('')
 const recent = ref([])
@@ -269,6 +271,11 @@ function scrollToResults () {
 // ── 이동 ──────────────────────────────────────────────
 async function goTarget (targetKey, item, prefix = '', text = '') {
   if (item) recent.value = pushRecent(item)
+  // 전자공시는 외부로 넘기지 않고 앱 안에서 그 종목의 협회 공시를 띄운다
+  if (targetKey === 'kofia') {
+    if (item) kofia.value = item
+    return
+  }
   const res = await bridgeGo(targetKey, {
     key: item ? item.queryKey : '',
     prefix,
@@ -502,6 +509,13 @@ const shortName = name => splitBrand(name).rest
       @go="(t, i, p) => goTarget(t, i, p)"
       @tag="tagSearch"
       @star="star"
+    />
+
+    <KofiaSheet
+      v-if="kofia"
+      :item="kofia"
+      @close="kofia = null"
+      @open="i => { kofia = null; openDetail(i) }"
     />
 
     <BridgeDialog v-if="bridge" :info="bridge" @close="bridge = null" />

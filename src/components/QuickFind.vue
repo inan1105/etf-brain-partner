@@ -114,6 +114,8 @@ const parts = name => highlight(splitBrand(name).rest, q.value)
           <span class="qf-acts">
             <button class="mini lime" @click.stop="emit('go', 'ta', e.item)" title="기술적분석">TA</button>
             <button class="mini blue" @click.stop="emit('go', 'stockr', e.item)" title="스토커 상담">상담</button>
+            <button v-if="e.item.market !== 'US'" class="mini indigo"
+                    @click.stop="emit('go', 'kofia', e.item)" title="금융투자협회 전자공시">공시</button>
           </span>
         </li>
       </ul>
@@ -212,6 +214,8 @@ kbd {
 .mini.lime:hover { background: var(--lime); color: var(--indigo-deep); }
 .mini.blue { background: var(--blue-soft); color: var(--blue-deep); }
 .mini.blue:hover { background: var(--blue); color: #fff; }
+.mini.indigo { background: #ECEBF5; color: var(--indigo); }
+.mini.indigo:hover { background: var(--indigo); color: #fff; }
 
 .qf-empty { padding: 34px 20px; text-align: center; font-size: 12.5px; color: var(--muted); line-height: 1.7; }
 .qf-empty b { display: block; font-size: 14px; color: var(--ink); margin-bottom: 6px; }
