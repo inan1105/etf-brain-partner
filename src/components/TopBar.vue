@@ -8,6 +8,9 @@ defineProps({
   count: { type: Number, default: 0 }
 })
 const emit = defineEmits(['go', 'home'])
+
+// 금융투자협회 전자공시 — 종목 전달이 필요 없어 브리지 없이 새 탭으로 연다
+const KOFIA_URL = 'https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/main/main.xml'
 </script>
 
 <template>
@@ -59,6 +62,17 @@ const emit = defineEmits(['go', 'home'])
         </span>
         <span class="lbl">스토커 상담</span>
       </button>
+      <a class="jump-btn indigo" :href="KOFIA_URL" target="_blank" rel="noopener"
+         title="금융투자협회 전자공시 (새 탭)">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z" />
+            <path d="M14 3v5h5M9 13h6M9 17h4" />
+          </svg>
+        </span>
+        <span class="lbl">전자공시</span>
+      </a>
     </nav>
   </header>
 </template>
@@ -123,8 +137,13 @@ const emit = defineEmits(['go', 'home'])
   background: var(--blue); color: #fff;
   box-shadow: 0 6px 14px -9px rgba(49, 130, 246, .9);
 }
+.jump-btn.indigo {
+  background: var(--indigo); color: #fff; text-decoration: none;
+  box-shadow: 0 6px 14px -9px rgba(44, 41, 96, .9);
+}
 .jump-btn.lime:hover { filter: brightness(1.05); }
 .jump-btn.blue:hover { background: var(--blue-deep); }
+.jump-btn.indigo:hover { background: var(--indigo-deep); }
 
 /* 좁은 화면 — 기준일 숨기고 버튼은 아이콘만 */
 @media (max-width: 640px) {
