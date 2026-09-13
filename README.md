@@ -353,8 +353,16 @@ ETF는 이름이 길고 구분이 비슷해 "정확히 입력해서 찾기"가 �
 
 ## 11. 배포
 
+Vercel 프로젝트 `etf-brain-partner` 가 GitHub 저장소
+[inan1105/etf-brain-partner](https://github.com/inan1105/etf-brain-partner) 에 연결되어 있습니다.
+
+- `main` 에 push → 운영(production) 자동 배포
+- 다른 브랜치에 push → 미리보기(preview) 배포
+
+CLI 로 직접 올릴 수도 있습니다.
+
 ```bash
-npx vercel            # 또는 GitHub 연동
+npx vercel --prod
 ```
 
 환경변수에 `DATA_GO_KR_KEY` 설정. `vercel.json`이 SPA rewrite와
