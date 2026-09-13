@@ -1,0 +1,23 @@
+{
+  "name": "etf-partner",
+  "version": "1.0.1",
+  "private": true,
+  "description": "ETF 파트너 — 국내외 ETF 조건검색과 기술적분석·스토커 연결",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "node scripts/sitemap.mjs && vite build",
+    "preview": "vite preview",
+    "snapshot": "node scripts/snapshot.mjs",
+    "sitemap": "node scripts/sitemap.mjs",
+    "check": "node scripts/check-keys.mjs",
+    "deploy": "node scripts/deploy.mjs"
+  },
+  "dependencies": {
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "vite": "^6.0.7"
+  }
+}

@@ -1,0 +1,10 @@
+# 비밀은 절대 업로드하지 않는다 — 환경변수는 Vercel 대시보드/CLI 로 설정한다
+.env
+.env.*
+!.env.example
+
+node_modules
+dist
+.git
+guidelines
+requirement

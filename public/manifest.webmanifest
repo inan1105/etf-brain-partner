@@ -1,0 +1,18 @@
+{
+  "name": "ETF 브레인 파트너",
+  "short_name": "ETF브레인",
+  "description": "국내외 ETF 조건검색과 기술적분석·AI 상담 연결",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F3EEE6",
+  "theme_color": "#F3EEE6",
+  "lang": "ko-KR",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
